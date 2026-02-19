@@ -1,4 +1,4 @@
-# 📋 Sistema de Gestión de Usuarios - Actividad 2
+# 📋 Sistema de Gestión de Usuarios - Actividad 2 Detallado
 
 Sistema CRUD completo que demuestra el uso de **Patrones de Diseño** y **Principios SOLID** en un stack full-stack (HTML5 + JavaScript + PHP + MySQL).
 
