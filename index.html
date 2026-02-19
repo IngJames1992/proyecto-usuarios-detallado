@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<!-- ====================================================================
+     ¿QUÉ ES DOCTYPE?
+     ====================================================================
+     EXPLICACIÓN:
+     - Es una DECLARACIÓN, no una etiqueta HTML
+     - Le dice al navegador: "Este documento es HTML5"
+     - Debe ser la PRIMERA línea del archivo
+     - No tiene etiqueta de cierre
+
+     SINTAXIS:
+     <!DOCTYPE html>
+     └─ Los símbolos <! indican una declaración especial
+     └─ DOCTYPE = tipo de documento
+     └─ html = versión HTML5 (la más moderna)
+
+     ¿POR QUÉ ES IMPORTANTE?
+     - Sin DOCTYPE, el navegador entra en "modo quirks" (compatibilidad antigua)
+     - Con DOCTYPE, el navegador usa estándares modernos
+     ================================================================== -->
+
+<html lang="es">
+<!-- ====================================================================
+     ETIQUETA <html>: CONTENEDOR PRINCIPAL
+     ====================================================================
+     ESTRUCTURA:
+     <html lang="es">
+     └─ <html>: Etiqueta de apertura
+     └─ lang="es": ATRIBUTO que define el idioma
+     └─ </html>: Etiqueta de cierre (al final del documento)
+
+     ATRIBUTO "lang":
+     - lang = language (idioma)
+     - "es" = español
+     - Otros ejemplos: "en" (inglés), "fr" (francés)
+
+     ¿PARA QUÉ SIRVE?
+     - Ayuda a lectores de pantalla (accesibilidad)
+     - Mejora el SEO (posicionamiento en Google)
+     - Permite que el navegador ofrezca traducción
+     ================================================================== -->
+
+<head>
+    <!-- ================================================================
+         SECCIÓN <head>: METADATOS DEL DOCUMENTO
+         ================================================================
+         IMPORTANTE:
+         - El contenido del <head> NO se ve en la página
+         - Contiene información SOBRE la página (metadatos)
+         - Es como el "pasaporte" del documento
+
+         ¿QUÉ VA AQUÍ?
+         - Título de la pestaña
+         - Enlaces a archivos CSS
+         - Configuración de caracteres
+         - Información para buscadores
+         ============================================================== -->
+
+    <meta charset="UTF-8">
+    <!-- ================================================================
+         ETIQUETA <meta>: METADATOS
+         ================================================================
+         ESTRUCTURA:
+         <meta charset="UTF-8">
+         └─ <meta>: Etiqueta de metadatos (auto-cierre)
+         └─ charset: ATRIBUTO que define codificación de caracteres
+         └─ "UTF-8": VALOR del atributo
+
+         ¿QUÉ ES charset?
+         - charset = character set (conjunto de caracteres)
+         - UTF-8 = formato universal que incluye:
+           ✓ Letras con tildes (á, é, í, ó, ú)
+           ✓ Letra ñ
+           ✓ Símbolos especiales (€, ©, ®)
+           ✓ Emojis (😀, 👍, ❤️)
+
+         ¿QUÉ PASA SIN ESTO?
+         - Las tildes se verían así: Ã¡, Ã©
+         - Los caracteres especiales no se mostrarían correctamente
+
+         NOTA IMPORTANTE:
+         - Esta etiqueta NO tiene cierre (es auto-cerrada)
+         - Debe ir al INICIO del <head>
+         ============================================================== -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ================================================================
+         META VIEWPORT: CONFIGURACIÓN PARA RESPONSIVE DESIGN
+         ================================================================
+         ESTRUCTURA COMPLETA:
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         └─ name="viewport": Tipo de metadato (área visible)
+         └─ content="...": Configuración del viewport
+
+         DESGLOSE DEL ATRIBUTO "content":
+         content="width=device-width, initial-scale=1.0"
+         └─ width=device-width: Ancho = ancho del dispositivo
+         └─ initial-scale=1.0: Zoom inicial al 100%
+
+         ¿QUÉ ES VIEWPORT?
+         - Es el área VISIBLE de la página en la pantalla
+         - En móviles: pantalla pequeña
+         - En computadora: pantalla grande
+
+         ¿PARA QUÉ SIRVE?
+         - Hace que la página se ADAPTE al tamaño del dispositivo
+         - Sin esto, en móviles se vería como miniatura de PC
+
+         EJEMPLO VISUAL:
+         CON viewport:     ✅ Texto legible en móvil
+         SIN viewport:     ❌ Texto muy pequeño, hay que hacer zoom
+         ============================================================== -->
+
+    <title>Sistema de Gestión de Usuarios - Actividad 2</title>
+    <!-- ================================================================
+         ETIQUETA <title>: TÍTULO DE LA PESTAÑA
+         ================================================================
+         ESTRUCTURA:
+         <title>Texto del título</title>
+         └─ <title>: Etiqueta de apertura
+         └─ Texto del título: Contenido visible
+         └─ </title>: Etiqueta de cierre
+
+         ¿DÓNDE SE VE?
+         - En la PESTAÑA del navegador (arriba)
+         - En los FAVORITOS cuando guardas la página
+         - En los resultados de BÚSQUEDA de Google
+
+         BUENAS PRÁCTICAS:
+         ✓ Descriptivo (que diga de qué trata la página)
+         ✓ Máximo 60 caracteres
+         ✓ Incluir palabras clave importantes
+         ============================================================== -->
+
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- ================================================================
+         ETIQUETA <link>: ENLAZAR ARCHIVOS EXTERNOS
+         ================================================================
+         ESTRUCTURA COMPLETA:
+         <link rel="stylesheet" href="css/styles.css">
+         └─ <link>: Etiqueta para enlaces externos (auto-cierre)
+         └─ rel="stylesheet": ATRIBUTO que define la relación
+         └─ href="css/styles.css": ATRIBUTO con la ruta del archivo
+
+         ATRIBUTO "rel" (relationship = relación):
+         - Indica QUÉ TIPO de archivo estamos enlazando
+         - "stylesheet" = hoja de estilos (CSS)
+         - Otros valores posibles:
+           · rel="icon" → icono de la pestaña (favicon)
+           · rel="manifest" → archivo de configuración PWA
+
+         ATRIBUTO "href" (hypertext reference = referencia):
+         - Indica DÓNDE está el archivo
+         - "css/styles.css" es una ruta RELATIVA:
+           css/              → carpeta "css"
+           styles.css        → archivo dentro de esa carpeta
+
+         RUTAS EXPLICADAS:
+         Ruta RELATIVA:    "css/styles.css"  ← desde la ubicación actual
+         Ruta ABSOLUTA:    "/css/styles.css" ← desde la raíz del sitio
+         Ruta COMPLETA:    "https://sitio.com/css/styles.css"
+
+         ¿QUÉ HACE ESTE LINK?
+         - Conecta el HTML con el archivo CSS
+         - El CSS contiene los ESTILOS (colores, tamaños, diseño)
+         - Sin esto, la página se vería en blanco y negro sin diseño
+
+         ANALOGÍA:
+         HTML = Estructura de una casa (paredes, puertas, ventanas)
+         CSS  = Decoración de la casa (pintura, muebles, colores)
+         Este <link> conecta ambos
+         ============================================================== -->
+</head>
+
+<body>
+    <!-- ================================================================
+         ETIQUETA <body>: CONTENIDO VISIBLE DE LA PÁGINA
+         ================================================================
+         ESTRUCTURA:
+         <body>
+         └─ Todo el contenido visible va aquí
+         └─ Se cierra al final: </body>
+
+         DIFERENCIA CON <head>:
+         <head>  → Información SOBRE la página (no visible)
+         <body>  → Contenido DE la página (visible)
+
+         ¿QUÉ VA DENTRO?
+         - Textos, imágenes, videos
+         - Formularios, tablas
+         - Botones, enlaces
+         - TODO lo que el usuario VE
+         ============================================================== -->
+
+    <!-- ================================================================
+         ETIQUETA <header>: ENCABEZADO DE LA PÁGINA
+         ================================================================
+         ESTRUCTURA:
+         <header class="header">
+         └─ <header>: Etiqueta semántica HTML5
+         └─ class="header": ATRIBUTO de clase CSS
+
+         ATRIBUTO "class":
+         - Asigna una o más CLASES CSS al elemento
+         - Las clases se definen en el archivo CSS
+         - Sirven para aplicar ESTILOS
+
+         SINTAXIS DE class:
+         class="header"
+         └─ class: nombre del atributo
+         └─ "header": valor del atributo (nombre de la clase)
+
+         MÚLTIPLES CLASES:
+         class="header principal destacado"
+         └─ Se separan con ESPACIOS
+         └─ Este elemento tendría 3 clases
+
+         ¿PARA QUÉ SIRVE class?
+         - En CSS: para aplicar estilos
+           .header { background: blue; }
+         - En JavaScript: para seleccionar elementos
+           document.querySelector('.header')
+
+         ETIQUETA SEMÁNTICA <header>:
+         - Indica que este es el ENCABEZADO
+         - Ayuda a los buscadores a entender la estructura
+         - Mejora la accesibilidad
+         ============================================================== -->
+    <header class="header">
+
+        <div class="container">
+        <!-- ============================================================
+             ETIQUETA <div>: CONTENEDOR GENÉRICO
+             ============================================================
+             ESTRUCTURA:
+             <div class="container">
+             └─ <div>: División o contenedor
+             └─ class="container": Clase CSS
+
+             ¿QUÉ ES UN <div>?
+             - Es un CONTENEDOR genérico (caja)
+             - No tiene significado semántico especial
+             - Sirve para AGRUPAR elementos
+
+             ¿POR QUÉ class="container"?
+             - "container" es una clase CSS común
+             - Generalmente limita el ancho máximo
+             - Centra el contenido horizontalmente
+
+             EJEMPLO DE USO EN CSS:
+             .container {
+                 max-width: 1200px;  ← ancho máximo
+                 margin: 0 auto;      ← centrar
+                 padding: 0 20px;     ← espaciado interno
+             }
+
+             ANALOGÍA:
+             <div> es como una caja de cartón donde metes cosas
+             class="container" le dice qué tamaño debe tener
+             ========================================================== -->
+
+            <h1>🎯 Sistema de Gestión de Usuarios</h1>
+            <!-- ========================================================
+                 ETIQUETA <h1>: ENCABEZADO PRINCIPAL
+                 ========================================================
+                 ESTRUCTURA:
+                 <h1>Texto del encabezado</h1>
+                 └─ <h1>: Etiqueta de encabezado nivel 1
+                 └─ 🎯: Emoji (carácter Unicode)
+                 └─ </h1>: Cierre de etiqueta
+
+                 JERARQUÍA DE ENCABEZADOS:
+                 <h1> → Más importante (título principal)
+                 <h2> → Subtítulo
+                 <h3> → Sub-subtítulo
+                 <h4>, <h5>, <h6> → Cada vez menos importantes
+
+                 REGLAS:
+                 - Solo debe haber UN <h1> por página
+                 - No saltarse niveles (no ir de <h1> a <h3>)
+
+                 ¿POR QUÉ ES IMPORTANTE?
+                 - SEO: Google usa <h1> para saber el tema
+                 - Accesibilidad: Lectores de pantalla lo usan
+                 - Estructura: Organiza el contenido
+                 ====================================================== -->
+
+            <p class="subtitle">Demostración de Patrones de Diseño + SOLID</p>
+            <!-- ========================================================
+                 ETIQUETA <p>: PÁRRAFO
+                 ========================================================
+                 ESTRUCTURA:
+                 <p class="subtitle">Texto</p>
+                 └─ <p>: Etiqueta de párrafo
+                 └─ class="subtitle": Clase CSS
+                 └─ Texto: Contenido del párrafo
+                 └─ </p>: Cierre
+
+                 ¿QUÉ ES UN PÁRRAFO?
+                 - Bloque de texto
+                 - Tiene margen arriba y abajo automáticamente
+
+                 ATRIBUTO class="subtitle":
+                 - "subtitle" = subtítulo
+                 - Esta clase probablemente tiene estilos como:
+                   · Color más tenue
+                   · Tamaño de fuente menor
+                   · Menos peso (font-weight)
+
+                 DIFERENCIA CON <h2>:
+                 <h2>      → Encabezado importante
+                 <p class="subtitle"> → Texto descriptivo
+                 ====================================================== -->
+        </div>
+    </header>
+
+    <main class="container">
+    <!-- ================================================================
+         ETIQUETA <main>: CONTENIDO PRINCIPAL
+         ================================================================
+         ESTRUCTURA:
+         <main class="container">
+         └─ <main>: Etiqueta semántica HTML5
+         └─ class="container": Clase CSS (misma que antes)
+
+         ¿QUÉ ES <main>?
+         - Indica el contenido PRINCIPAL de la página
+         - Solo debe haber UNO por página
+         - No debe incluir header, footer o sidebars
+
+         BENEFICIOS:
+         - SEO: Google identifica el contenido importante
+         - Accesibilidad: Los lectores van directo aquí
+         - Organización: Estructura clara del documento
+         ============================================================== -->
+
+        <!-- ============================================================
+             ETIQUETA <section>: SECCIÓN TEMÁTICA
+             ============================================================
+             ESTRUCTURA:
+             <section class="stats-section">
+             └─ <section>: Etiqueta semántica HTML5
+             └─ class="stats-section": Clase CSS específica
+
+             ¿QUÉ ES <section>?
+             - Agrupa contenido relacionado temáticamente
+             - Es más específico que <div>
+             - Generalmente tiene un encabezado (h2, h3)
+
+             ATRIBUTO class="stats-section":
+             - "stats" = statistics (estadísticas)
+             - Esta clase CSS probablemente define:
+               · Diseño en grid o flexbox
+               · Espaciado entre tarjetas
+               · Colores de fondo
+
+             DIFERENCIA <section> vs <div>:
+             <section> → Tiene significado (sección temática)
+             <div>     → Contenedor genérico (sin significado)
+
+             CUÁNDO USAR <section>:
+             ✓ Contenido temático relacionado
+             ✓ Puede tener título propio
+             ✓ Podría existir de forma independiente
+             ========================================================== -->
+        <section class="stats-section">
+
+            <div class="stat-card">
+            <!-- ========================================================
+                 ESTRUCTURA DE TARJETA ESTADÍSTICA
+                 ========================================================
+                 CLASE "stat-card":
+                 - "stat" = statistic (estadística)
+                 - "card" = tarjeta (diseño tipo tarjeta)
+
+                 ¿QUÉ ES UNA TARJETA (CARD)?
+                 - Componente visual común en diseño web
+                 - Generalmente tiene:
+                   · Borde o sombra
+                   · Fondo diferenciado
+                   · Padding interno
+                   · Bordes redondeados
+
+                 EJEMPLO DE ESTILOS CSS:
+                 .stat-card {
+                     background: white;
+                     border-radius: 8px;
+                     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                     padding: 20px;
+                 }
+                 ====================================================== -->
+
+                <div class="stat-icon">👥</div>
+                <!-- ====================================================
+                     CONTENEDOR DE ICONO
+                     ====================================================
+                     class="stat-icon":
+                     - Contenedor para el emoji/icono
+                     - Probablemente tiene estilos como:
+                       · font-size grande
+                       · text-align center
+                       · color específico
+
+                     EMOJI 👥:
+                     - Representa "personas" o "usuarios"
+                     - Es un carácter Unicode (no imagen)
+                     - Ventajas:
+                       ✓ No requiere cargar imagen
+                       ✓ Se escala sin perder calidad
+                       ✓ Funciona en cualquier dispositivo
+                     ================================================== -->
+
+                <div class="stat-value" id="stat-total">0</div>
+                <!-- ====================================================
+                     VALOR DE LA ESTADÍSTICA
+                     ====================================================
+                     ATRIBUTOS:
+                     class="stat-value" → Clase CSS para estilos
+                     id="stat-total"    → ID único para JavaScript
+
+                     ¿QUÉ ES UN "id"?
+                     - Identificador ÚNICO del elemento
+                     - Solo puede haber UN elemento con este ID
+                     - Se usa para:
+                       · Seleccionar con JavaScript
+                       · Anclar con enlaces (#stat-total)
+                       · Aplicar estilos específicos en CSS
+
+                     SINTAXIS:
+                     id="stat-total"
+                     └─ id: nombre del atributo
+                     └─ "stat-total": valor único
+
+                     DIFERENCIA class vs id:
+                     class → Puede repetirse en múltiples elementos
+                     id    → Debe ser ÚNICO en toda la página
+
+                     USO EN JAVASCRIPT:
+                     document.getElementById('stat-total').textContent = '10';
+                     └─ Esto cambiaría el 0 por 10
+
+                     CONTENIDO INICIAL:
+                     0 → Valor por defecto
+                     └─ JavaScript lo actualizará dinámicamente
+                     ================================================== -->
+
+                <div class="stat-label">Total Usuarios</div>
+                <!-- ====================================================
+                     ETIQUETA DE LA ESTADÍSTICA
+                     ====================================================
+                     class="stat-label":
+                     - "label" = etiqueta o descripción
+                     - Explica qué significa el número
+                     - Probablemente tiene estilos:
+                       · Tamaño de fuente menor
+                       · Color más tenue
+                       · Text-transform: uppercase
+                     ================================================== -->
+            </div>
+
+            <!-- Los otros stat-card siguen la misma estructura -->
+            <div class="stat-card">
+                <div class="stat-icon">👑</div>
+                <div class="stat-value" id="stat-admins">0</div>
+                <div class="stat-label">Administradores</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">👤</div>
+                <div class="stat-value" id="stat-normales">0</div>
+                <div class="stat-label">Usuarios Normales</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-value" id="stat-activos">0</div>
+                <div class="stat-label">Activos</div>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2 id="form-title">➕ Agregar Nuevo Usuario</h2>
+
+            <form id="user-form">
+            <!-- ========================================================
+                 ETIQUETA <form>: FORMULARIO
+                 ========================================================
+                 ESTRUCTURA:
+                 <form id="user-form">
+                 └─ <form>: Etiqueta para formularios
+                 └─ id="user-form": Identificador único
+
+                 ¿QUÉ ES UN FORMULARIO?
+                 - Permite al usuario INGRESAR datos
+                 - Puede enviarse a un servidor
+                 - Agrupa campos relacionados (inputs)
+
+                 ATRIBUTOS COMUNES (no usados aquí):
+                 action="/guardar" → Dónde enviar datos
+                 method="POST"     → Cómo enviar (POST/GET)
+
+                 ¿POR QUÉ NO TIENEN action NI method AQUÍ?
+                 - Porque usamos JavaScript (AJAX)
+                 - El envío se maneja con fetch() en app.js
+                 - No recargamos la página
+
+                 ATRIBUTO id="user-form":
+                 - Permite seleccionar con JavaScript:
+                   document.getElementById('user-form')
+                 - Para capturar el evento submit
+                 ====================================================== -->
+
+                <input type="hidden" id="user-id" name="id">
+                <!-- ====================================================
+                     INPUT OCULTO (HIDDEN)
+                     ====================================================
+                     ESTRUCTURA COMPLETA:
+                     <input type="hidden" id="user-id" name="id">
+                     └─ <input>: Campo de entrada (auto-cierre)
+                     └─ type="hidden": TIPO de input
+                     └─ id="user-id": Identificador único
+                     └─ name="id": Nombre del campo para el servidor
+
+                     ATRIBUTO type="hidden":
+                     - El campo NO es visible para el usuario
+                     - Pero SÍ se envía con el formulario
+
+                     ¿PARA QUÉ SIRVE?
+                     - Guardar datos que el usuario no debe ver/editar
+                     - En este caso: el ID del usuario al editar
+
+                     FUNCIONAMIENTO:
+                     MODO CREAR:  value="" (vacío)
+                     MODO EDITAR: value="5" (ID del usuario a editar)
+
+                     ATRIBUTO name="id":
+                     - Nombre con el que el servidor recibe el dato
+                     - PHP lo recibe como: $_POST['id']
+                     ================================================== -->
+
+                <div class="form-grid">
+                <!-- ====================================================
+                     CONTENEDOR GRID PARA FORMULARIO
+                     ====================================================
+                     class="form-grid":
+                     - Probablemente usa CSS Grid Layout
+                     - Organiza los campos en columnas
+
+                     EJEMPLO DE CSS:
+                     .form-grid {
+                         display: grid;
+                         grid-template-columns: 1fr 1fr;
+                         gap: 20px;
+                     }
+                     └─ Crea 2 columnas iguales con espacio entre ellas
+                     ================================================== -->
+
+                    <div class="form-group">
+                    <!-- ================================================
+                         GRUPO DE CAMPO DE FORMULARIO
+                         ================================================
+                         class="form-group":
+                         - Agrupa etiqueta + input relacionados
+                         - Mantiene organizado cada campo
+                         - Facilita aplicar estilos consistentes
+                         ============================================== -->
+
+                        <label for="nombre">Nombre Completo</label>
+                        <!-- ============================================
+                             ETIQUETA <label>: ETIQUETA DE CAMPO
+                             ============================================
+                             ESTRUCTURA:
+                             <label for="nombre">Texto</label>
+                             └─ <label>: Etiqueta descriptiva
+                             └─ for="nombre": ATRIBUTO crucial
+                             └─ Texto: Lo que ve el usuario
+
+                             ATRIBUTO for="nombre":
+                             - Conecta el <label> con un <input>
+                             - El valor debe coincidir con el id del input
+                             - BENEFICIOS:
+                               · Al hacer clic en el label, se activa el input
+                               · Mejora accesibilidad
+                               · Aumenta el área clickeable
+
+                             EJEMPLO:
+                             <label for="email">Email</label>
+                             <input id="email">
+                             └─ Ambos conectados por el valor "email"
+
+                             PRUEBA:
+                             Haz clic en "Nombre Completo" y verás
+                             que el cursor aparece en el input
+                             ========================================== -->
+
+                        <input 
+                            type="text" 
+                            id="nombre" 
+                            name="nombre" 
+                            placeholder="Ej: Juan Pérez" 
+                            required>
+                        <!-- ============================================
+                             ETIQUETA <input>: CAMPO DE ENTRADA
+                             ============================================
+                             ESTRUCTURA MULTI-ATRIBUTO:
+                             <input 
+                                 type="text" 
+                                 id="nombre" 
+                                 name="nombre" 
+                                 placeholder="Ej: Juan Pérez" 
+                                 required>
+
+                             ATRIBUTO type="text":
+                             - Define el TIPO de input
+                             - "text" = texto simple (una línea)
+                             - Otros tipos comunes:
+                               · type="email"    → valida email
+                               · type="password" → oculta caracteres
+                               · type="number"   → solo números
+                               · type="date"     → selector de fecha
+
+                             ATRIBUTO id="nombre":
+                             - Identificador único
+                             - Conecta con el for del <label>
+                             - Se usa en JavaScript:
+                               document.getElementById('nombre')
+
+                             ATRIBUTO name="nombre":
+                             - Nombre del campo para el SERVIDOR
+                             - PHP lo recibe como: $_POST['nombre']
+                             - JavaScript lo obtiene con FormData
+
+                             ATRIBUTO placeholder="Ej: Juan Pérez":
+                             - Texto de EJEMPLO dentro del input
+                             - Desaparece cuando escribes
+                             - Es una GUÍA, no un valor
+                             - Color más tenue que el texto real
+
+                             ATRIBUTO required:
+                             - Hace el campo OBLIGATORIO
+                             - No tiene valor (es booleano)
+                             - El navegador valida automáticamente
+                             - Si está vacío, no se envía el form
+                             - Muestra mensaje: "Por favor, rellene este campo"
+
+                             NOTA SOBRE AUTO-CIERRE:
+                             <input> NO tiene etiqueta de cierre
+                             Correcto: <input type="text">
+                             Incorrecto: <input type="text"></input>
+                             ========================================== -->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="usuario@email.com" 
+                            required>
+                        <!-- ============================================
+                             INPUT TYPE EMAIL
+                             ============================================
+                             DIFERENCIA CON type="text":
+                             - Valida formato de email automáticamente
+                             - Debe tener @ y dominio (.com, .org, etc.)
+                             - En móviles, muestra teclado optimizado:
+                               · Muestra @ accesible
+                               · Muestra .com rápido
+
+                             VALIDACIÓN AUTOMÁTICA:
+                             ✓ "user@email.com" → Válido
+                             ✗ "user@email"     → Inválido (falta .com)
+                             ✗ "user.com"       → Inválido (falta @)
+                             ========================================== -->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo_usuario">Tipo de Usuario</label>
+                        <select id="tipo_usuario" name="tipo_usuario">
+                        <!-- ============================================
+                             ETIQUETA <select>: LISTA DESPLEGABLE
+                             ============================================
+                             ESTRUCTURA:
+                             <select id="tipo_usuario" name="tipo_usuario">
+                             └─ <select>: Abre el menú desplegable
+                             └─ id="tipo_usuario": Identificador único
+                             └─ name="tipo_usuario": Nombre para servidor
+
+                             ¿QUÉ ES UN <select>?
+                             - Crea una lista desplegable (dropdown)
+                             - El usuario elige UNA opción
+                             - Contiene elementos <option>
+
+                             VENTAJAS:
+                             ✓ Limita opciones (no hay errores de escritura)
+                             ✓ Ocupa poco espacio
+                             ✓ Fácil de usar
+                             ========================================== -->
+
+                            <option value="normal">👤 Usuario Normal</option>
+                            <!-- ========================================
+                                 ETIQUETA <option>: OPCIÓN DEL SELECT
+                                 ========================================
+                                 ESTRUCTURA:
+                                 <option value="normal">Texto visible</option>
+                                 └─ <option>: Define una opción
+                                 └─ value="normal": Valor que se envía
+                                 └─ Texto visible: Lo que ve el usuario
+
+                                 IMPORTANTE:
+                                 - Lo que se VE: "👤 Usuario Normal"
+                                 - Lo que se ENVÍA: "normal"
+
+                                 EJEMPLO:
+                                 Usuario elige: "👤 Usuario Normal"
+                                 Servidor recibe: tipo_usuario = "normal"
+
+                                 PATRÓN APLICADO: Factory Method
+                                 - Según el value, se creará un tipo de objeto
+                                 - "normal" → Crea Usuario normal
+                                 - "admin"  → Crea Usuario administrador
+                                 ====================================== -->
+
+                            <option value="admin">👑 Administrador</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="form-errors" class="alert alert-error hidden"></div>
+                <!-- ====================================================
+                     CONTENEDOR DE MENSAJES DE ERROR
+                     ====================================================
+                     ATRIBUTOS:
+                     id="form-errors"  → Para JavaScript
+                     class="alert alert-error hidden"
+
+                     MÚLTIPLES CLASES:
+                     - Se separan con ESPACIOS
+                     - Cada clase aplica diferentes estilos
+
+                     CLASE "alert":
+                     - Estilo base de alerta
+                     - Probablemente: padding, border-radius
+
+                     CLASE "alert-error":
+                     - Modificador de tipo error
+                     - Probablemente: color rojo, icono ❌
+
+                     CLASE "hidden":
+                     - Oculta el elemento
+                     - CSS: display: none;
+                     - JavaScript la remueve para mostrar errores
+
+                     FUNCIONAMIENTO:
+                     1. Estado inicial: hidden (oculto)
+                     2. Si hay error: JavaScript remueve "hidden"
+                     3. Se hace visible con mensaje de error
+                     ================================================== -->
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" id="btn-submit">
+                    <!-- ================================================
+                         ETIQUETA <button>: BOTÓN
+                         ================================================
+                         ESTRUCTURA:
+                         <button type="submit" class="btn btn-primary" id="btn-submit">
+                         └─ <button>: Etiqueta de botón
+                         └─ type="submit": TIPO de botón
+                         └─ class="...": Clases CSS
+                         └─ id="btn-submit": Identificador
+
+                         ATRIBUTO type="submit":
+                         - Define el comportamiento del botón
+                         - "submit" = envía el formulario
+                         - Otros tipos:
+                           · type="button"  → No hace nada (puro JS)
+                           · type="reset"   → Limpia el formulario
+
+                         CLASES CSS:
+                         class="btn btn-primary"
+                         └─ "btn": Estilo base de botón
+                         └─ "btn-primary": Modificador (color primario)
+
+                         PATRÓN BEM (Block Element Modifier):
+                         btn         → Bloque base
+                         btn-primary → Modificador de color
+
+                         FUNCIONAMIENTO:
+                         1. Usuario hace clic
+                         2. Se dispara evento "submit" del form
+                         3. JavaScript captura el evento
+                         4. Valida datos y envía al servidor
+                         ============================================== -->
+                        <span id="btn-text">✨ Crear Usuario</span>
+                        <!-- ============================================
+                             CONTENEDOR DE TEXTO DEL BOTÓN
+                             ============================================
+                             ¿POR QUÉ UN <span> DENTRO DEL BOTÓN?
+                             - Para poder cambiar solo el texto
+                             - Sin afectar la estructura del botón
+
+                             id="btn-text":
+                             - JavaScript cambia el texto según modo:
+                               CREAR: "✨ Crear Usuario"
+                               EDITAR: "💾 Actualizar Usuario"
+
+                             CÓDIGO JAVASCRIPT:
+                             document.getElementById('btn-text')
+                                     .textContent = '💾 Actualizar';
+                             ========================================== -->
+                    </button>
+
+                    <button type="button" class="btn btn-secondary" id="btn-cancel" onclick="cancelEdit()">
+                    <!-- ================================================
+                         BOTÓN CANCELAR
+                         ================================================
+                         DIFERENCIAS CON EL BOTÓN ANTERIOR:
+
+                         type="button":
+                         - NO envía el formulario
+                         - Solo ejecuta JavaScript
+
+                         class="btn btn-secondary":
+                         - "btn-secondary" → Color secundario
+                         - Indica acción menos importante
+
+                         ATRIBUTO onclick="cancelEdit()":
+                         - Ejecuta función JavaScript al hacer clic
+                         - cancelEdit() está definida en app.js
+
+                         SINTAXIS:
+                         onclick="cancelEdit()"
+                         └─ onclick: nombre del atributo (evento)
+                         └─ "cancelEdit()": nombre de la función
+
+                         ¿QUÉ HACE cancelEdit()?
+                         - Limpia el formulario
+                         - Quita el ID oculto
+                         - Vuelve a modo "crear"
+                         - Oculta el botón cancelar
+
+                         ALTERNATIVA MODERNA:
+                         En lugar de onclick en HTML, se prefiere:
+                         JavaScript: 
+                         button.addEventListener('click', cancelEdit)
+
+                         Pero onclick es más directo y fácil de leer
+                         ============================================== -->
+                        ❌ Cancelar
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="filters-section">
+            <h3>🔍 Filtrar Usuarios</h3>
+
+            <div class="filters-grid">
+                <div class="form-group">
+                    <label for="filter-search">Buscar</label>
+                    <input 
+                        type="text" 
+                        id="filter-search" 
+                        placeholder="Buscar por nombre o email..." 
+                        oninput="loadUsers()">
+                    <!-- ================================================
+                         FILTRO DE BÚSQUEDA CON EVENTO oninput
+                         ================================================
+                         ATRIBUTO oninput="loadUsers()":
+                         - Se ejecuta cada vez que cambias el texto
+                         - Diferencia con onchange:
+                           · oninput: Al escribir cada letra
+                           · onchange: Al terminar de escribir (blur)
+
+                         ¿QUÉ HACE loadUsers()?
+                         - Función en app.js
+                         - Carga usuarios desde la API
+                         - Aplica los filtros activos
+                         - Actualiza la tabla
+
+                         FLUJO:
+                         1. Usuario escribe "Juan"
+                         2. oninput se dispara
+                         3. Llama a loadUsers()
+                         4. loadUsers() lee el valor del input
+                         5. Filtra usuarios que contengan "Juan"
+                         6. Muestra solo coincidencias
+
+                         BÚSQUEDA EN TIEMPO REAL:
+                         - No hay botón "Buscar"
+                         - Se filtra mientras escribes
+                         - Mejor experiencia de usuario
+                         ============================================== -->
+                </div>
+
+                <div class="form-group">
+                    <label for="filter-tipo">Tipo</label>
+                    <select id="filter-tipo" onchange="loadUsers()">
+                    <!-- ================================================
+                         FILTRO POR TIPO CON EVENTO onchange
+                         ================================================
+                         ATRIBUTO onchange="loadUsers()":
+                         - Se ejecuta cuando CAMBIAS la selección
+                         - Solo se dispara al cambiar (no al escribir)
+
+                         ¿POR QUÉ onchange Y NO oninput?
+                         - Los <select> usan onchange
+                         - oninput no funciona bien con dropdowns
+                         ============================================== -->
+
+                        <option value="">Todos</option>
+                        <!-- ============================================
+                             OPCIÓN value=""
+                             ============================================
+                             value="" → Valor VACÍO
+                             - Significa "no filtrar por tipo"
+                             - Muestra todos los usuarios
+
+                             LÓGICA EN JAVASCRIPT:
+                             if (filtroTipo === "") {
+                                 // No filtrar, mostrar todos
+                             }
+                             ========================================== -->
+
+                        <option value="admin">Administradores</option>
+                        <option value="normal">Normales</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="filter-activo">Estado</label>
+                    <select id="filter-activo" onchange="loadUsers()">
+                        <option value="">Todos</option>
+                        <option value="1" selected>Activos</option>
+                        <!-- ============================================
+                             ATRIBUTO selected
+                             ============================================
+                             selected:
+                             - Marca esta opción como PREDETERMINADA
+                             - Se selecciona al cargar la página
+                             - No necesita valor (es booleano)
+
+                             value="1":
+                             - 1 = true (activo)
+                             - En la base de datos:
+                               activo = 1 → usuario activo
+                               activo = 0 → usuario inactivo
+                             ========================================== -->
+                        <option value="0">Inactivos</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-secondary" onclick="clearFilters()">
+                        🔄 Limpiar Filtros
+                    </button>
+                    <!-- ================================================
+                         BOTÓN LIMPIAR FILTROS
+                         ================================================
+                         onclick="clearFilters()":
+                         - Función definida en app.js
+                         - Resetea todos los campos de filtro
+                         - Vuelve a cargar todos los usuarios
+
+                         FUNCIONAMIENTO:
+                         1. Usuario hace clic
+                         2. clearFilters() se ejecuta
+                         3. Limpia input de búsqueda
+                         4. Resetea selects a "Todos"
+                         5. Llama a loadUsers()
+                         ============================================== -->
+                </div>
+            </div>
+        </section>
+
+        <section class="table-section">
+            <h3>👥 Lista de Usuarios</h3>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Cargando usuarios...</p>
+            </div>
+
+            <div class="table-responsive">
+            <!-- ====================================================
+                 CONTENEDOR RESPONSIVE PARA TABLA
+                 ====================================================
+                 class="table-responsive":
+                 - Hace la tabla adaptable a pantallas pequeñas
+                 - Probablemente tiene:
+                   overflow-x: auto;  ← scroll horizontal en móvil
+                   -webkit-overflow-scrolling: touch; ← scroll suave
+
+                 ¿POR QUÉ ES NECESARIO?
+                 - Las tablas son anchas
+                 - En móviles no caben completas
+                 - Esto permite hacer scroll horizontal
+                 ================================================== -->
+
+                <table id="users-table">
+                <!-- ================================================
+                     ETIQUETA <table>: TABLA
+                     ================================================
+                     ESTRUCTURA BÁSICA DE UNA TABLA:
+                     <table>
+                       <thead>      ← Encabezado (head)
+                         <tr>       ← Fila (table row)
+                           <th>     ← Celda de encabezado (table header)
+                       <tbody>      ← Cuerpo (body)
+                         <tr>       ← Fila
+                           <td>     ← Celda de datos (table data)
+
+                     id="users-table":
+                     - Para seleccionar con JavaScript
+                     - Para aplicar estilos específicos
+                     ============================================== -->
+
+                    <thead>
+                    <!-- ================================================
+                         ETIQUETA <thead>: ENCABEZADO DE TABLA
+                         ================================================
+                         - Agrupa las filas de encabezado
+                         - Solo se usa una vez por tabla
+                         - Contiene <th> (table header)
+
+                         BENEFICIOS:
+                         - Semántica clara
+                         - Se puede fijar al hacer scroll
+                         - Accesibilidad mejorada
+                         ============================================== -->
+
+                        <tr>
+                        <!-- ============================================
+                             ETIQUETA <tr>: FILA DE TABLA
+                             ============================================
+                             tr = table row (fila de tabla)
+                             - Contiene las celdas de una fila
+                             - Puede tener <th> o <td>
+                             ========================================== -->
+
+                            <th>ID</th>
+                            <!-- ========================================
+                                 ETIQUETA <th>: CELDA DE ENCABEZADO
+                                 ========================================
+                                 th = table header
+                                 - Define una celda de encabezado
+                                 - Texto en negrita por defecto
+                                 - Centrado por defecto
+
+                                 DIFERENCIA CON <td>:
+                                 <th> → Encabezado (negritas)
+                                 <td> → Datos normales
+                                 ====================================== -->
+
+                            <th>Iniciales</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Tipo</th>
+                            <th>Estado</th>
+                            <th>Fecha Creación</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="users-tbody">
+                    <!-- ================================================
+                         ETIQUETA <tbody>: CUERPO DE LA TABLA
+                         ================================================
+                         - Contiene las filas de datos
+                         - Aquí van los usuarios
+
+                         id="users-tbody":
+                         - JavaScript lo selecciona para insertar filas
+
+                         CONTENIDO DINÁMICO:
+                         - Este tbody empieza VACÍO
+                         - JavaScript lo llena con código como:
+
+                         tbody.innerHTML = `
+                           <tr>
+                             <td>1</td>
+                             <td>Juan</td>
+                             ...
+                           </tr>
+                         `;
+                         ============================================== -->
+                        <!-- Las filas se generan dinámicamente con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="no-results" class="no-results hidden">
+                <div class="emoji">😔</div>
+                <p>No se encontraron usuarios</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Sistema de Usuarios - Actividad 2 | Patrones de Diseño + SOLID</p>
+            <p class="footer-patterns">
+                Patrones aplicados: 
+                <span class="badge">Singleton</span>
+                <span class="badge">Factory</span>
+                <span class="badge">Strategy</span>
+                <span class="badge">Observer</span>
+                <span class="badge">Repository</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- ====================================================================
+         CARGA DE SCRIPTS JAVASCRIPT
+         ====================================================================
+         ORDEN CRÍTICO (de dependencias):
+         1. NotificationStrategy.js  ← Define las clases base
+         2. UserValidator.js         ← Usa clases de validación
+         3. app.js                   ← Usa todo lo anterior
+         ================================================================== -->
+
+    <script src="js/patterns/NotificationStrategy.js"></script>
+    <!-- ====================================================================
+         ETIQUETA <script>: CARGAR JAVASCRIPT EXTERNO
+         ====================================================================
+         ESTRUCTURA:
+         <script src="ruta/archivo.js"></script>
+         └─ <script>: Etiqueta para JavaScript
+         └─ src="...": ATRIBUTO source (origen del archivo)
+         └─ </script>: Etiqueta de cierre OBLIGATORIA
+
+         ATRIBUTO src (source):
+         - Indica la RUTA del archivo JavaScript
+         - Similar a href en <link>
+         - Ruta relativa: "js/patterns/NotificationStrategy.js"
+
+         DESGLOSE DE LA RUTA:
+         js/                        → Carpeta raíz de JavaScript
+         patterns/                  → Subcarpeta de patrones
+         NotificationStrategy.js    → Archivo específico
+
+         ¿POR QUÉ NO <script src="..." />?
+         - A diferencia de <input> o <link>
+         - <script> SIEMPRE necesita cierre: </script>
+         - Aunque no tenga contenido entre etiquetas
+
+         UBICACIÓN AL FINAL DEL <body>:
+         - Los scripts se cargan DESPUÉS del HTML
+         - Ventajas:
+           ✓ La página se muestra más rápido
+           ✓ Los elementos HTML ya existen cuando JS se ejecuta
+           ✓ No hay errores por elementos inexistentes
+
+         ALTERNATIVAS MODERNAS:
+         <script src="..." defer></script>
+         └─ defer: Carga en paralelo, ejecuta al final
+
+         <script src="..." async></script>
+         └─ async: Carga y ejecuta en cuanto esté listo
+
+         ¿QUÉ CONTIENE NotificationStrategy.js?
+         - Implementación del patrón Strategy
+         - Clases para mostrar notificaciones:
+           · ToastNotification (esquina de pantalla)
+           · AlertNotification (alerta modal)
+           · ConsoleNotification (consola del navegador)
+         ================================================================== -->
+
+    <script src="js/validators/UserValidator.js"></script>
+    <!-- ====================================================================
+         SCRIPT DE VALIDACIÓN
+         ====================================================================
+         ¿QUÉ CONTIENE?
+         - Clase UserValidator
+         - Métodos de validación:
+           · validateName(nombre)    → Mínimo 3 caracteres
+           · validateEmail(email)    → Formato email válido
+           · validateForm(formData)  → Valida todo el formulario
+
+         ¿POR QUÉ SE CARGA SEGUNDO?
+         - Depende de NotificationStrategy
+         - Si hay errores, usa las notificaciones
+         - Pero NO depende de app.js
+
+         PRINCIPIO SOLID: Single Responsibility
+         - Este archivo SOLO valida
+         - No maneja la interfaz
+         - No hace peticiones al servidor
+         ================================================================== -->
+
+    <script src="js/app.js"></script>
+    <!-- ====================================================================
+         SCRIPT PRINCIPAL DE LA APLICACIÓN
+         ====================================================================
+         ¿POR QUÉ SE CARGA AL FINAL?
+         - Depende de TODOS los scripts anteriores
+         - Usa NotificationStrategy para mostrar mensajes
+         - Usa UserValidator para validar formularios
+
+         ¿QUÉ CONTIENE app.js?
+         - Event listeners del formulario
+         - Funciones CRUD:
+           · createUser()   → Crear usuario (POST)
+           · updateUser()   → Actualizar usuario (PUT)
+           · deleteUser()   → Eliminar usuario (DELETE)
+           · loadUsers()    → Listar usuarios (GET)
+         - Funciones de interfaz:
+           · renderUsers()  → Dibujar tabla
+           · editUser()     → Modo edición
+           · cancelEdit()   → Cancelar edición
+           · updateStats()  → Actualizar estadísticas
+
+         PATRÓN APLICADO: Observer Pattern
+         - La interfaz "observa" cambios en los datos
+         - Cuando cambian, se actualiza automáticamente
+
+         PRINCIPIO SOLID: Dependency Inversion
+         - No depende de implementaciones concretas
+         - Usa las interfaces de los otros módulos
+         ================================================================== -->
+
+</body>
+</html>
